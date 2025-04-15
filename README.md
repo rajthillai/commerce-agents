@@ -42,11 +42,6 @@ CommerceCraft AI is a powerful AI-powered development tool for Adobe Commerce (M
    npm run dev
    ```
 
-5. In a separate terminal, start the Genkit server:
-   ```bash
-   npm run genkit:dev
-   ```
-
 ## Project Structure
 
 ```
