@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-
-const COMMERCE_SRC_DIR = '/Users/trajendran/Desktop/Projects/corecommerce/src/app/code';
+import { config } from './config';
 
 export interface FileContent {
   filePath: string;
@@ -14,7 +13,7 @@ export async function writeFilesToCommerceDir(files: FileContent[]): Promise<{ s
       // Split the file path to get the directory structure
       const pathParts = file.filePath.split('/');
       const fileName = pathParts.pop()!;
-      const dirPath = path.join(COMMERCE_SRC_DIR, ...pathParts);
+      const dirPath = path.join(config.commerceSrcDir, ...pathParts);
 
       // Create directories if they don't exist
       if (!fs.existsSync(dirPath)) {

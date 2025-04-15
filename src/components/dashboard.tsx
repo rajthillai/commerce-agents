@@ -12,8 +12,7 @@ import {developCommerceModule} from '@/ai/flows/developer-agent';
 import {Textarea} from "@/components/ui/textarea";
 import {ProjectConfigurationForm} from "@/components/project-configuration-form";
 import {OutputReview} from '@/components/output-review';
-
-const COMMERCE_SRC_DIR = '/Users/trajendran/Desktop/Projects/corecommerce/src/app/code';
+import { config } from '@/lib/config';
 
 const Dashboard: React.FC = () => {
   const {toast} = useToast();
@@ -107,7 +106,7 @@ const Dashboard: React.FC = () => {
 
   const handleOpenCommerceDir = () => {
     // Open the Commerce directory in the file explorer
-    window.open(`file://${COMMERCE_SRC_DIR}`, '_blank');
+    window.open(`file://${config.commerceSrcDir}`, '_blank');
   };
 
   useEffect(() => {
@@ -170,14 +169,14 @@ const Dashboard: React.FC = () => {
               </CardContent>
             </Card>
           </div>
-          <Card className="mb-4">
+          {/* <Card className="mb-4">
             <CardHeader>
               <CardTitle>Generated Technical Approach</CardTitle>
             </CardHeader>
             <CardContent>
               <Textarea value={technicalApproachCsvContent} readOnly className="mb-4" />
             </CardContent>
-          </Card>
+          </Card> */}
           <Card>
             <CardHeader>
               <CardTitle>Output</CardTitle>
